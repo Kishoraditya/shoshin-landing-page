@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoshin - Advanced AI Chatbot | Beginners Mind</title>
+    <meta name="description" content="Discover Shoshin, the advanced AI chatbot with a beginner's mind. Featuring graph-based RAG, multimodal I/O, and innovative AI agents for specific tasks.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Shoshin Logo" class="logo">
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cta-button" onclick="scrollToNewsletter()">Notify Me</button>
+            <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>            
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Shoshin: The AI Chatbot with a Beginner's Mind</h1>
+                <p>Curious, eager, and always ready to help. Experience the next generation of AI assistance.</p>
+                <button class="cta-button" onclick="scrollToNewsletter()">Get Early Access</button>
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='images/Designer.jpg') }}" alt="Shoshin AI Visualization">
+            </div>
+        </section>
+
+        <section id="features">
+            <h2>Innovative Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <img src="{{ url_for('static', filename='images/feature-icons/rag.png') }}" alt="RAG Icon">
+                    <h3>Graph and Vector-based RAG</h3>
+                    <p>Advanced retrieval with multimodal input support.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="{{ url_for('static', filename='images/feature-icons/hallucination.png') }}" alt="Less Hallucination Icon">
+                    <h3>Reduced Hallucination</h3>
+                    <p>More accurate and reliable responses.</p>
+                </div>
+                <!-- Add more feature cards here -->
+            </div>
+            <button class="secondary-button" onclick="toggleFeatures()">View More</button>
+        </section>
+
+        <section id="pricing">
+            <h2>Affordable Pricing</h2>
+            <div class="pricing-card">
+                <h3>Early Bird Offer</h3>
+                <p class="price">Under $10/month</p>
+                <ul>
+                    <li>Full access to all features</li>
+                    <li>Priority support</li>
+                    <li>Early access to new features</li>
+                </ul>
+                <button class="cta-button" onclick="scrollToNewsletter()">Get Started</button>
+            </div>
+        </section>
+
+        <section id="newsletter">
+            <h2>Stay Updated</h2>
+            <p>Be the first to know when Shoshin launches. Sign up for our newsletter!</p>
+            <form id="newsletter-form" method="POST">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit" class="cta-button">Notify Me</button>
+            </form>
+            {% if message %}
+            <p class="thank-you-message">{{ message }}</p>
+            {% endif %}
+        </section>
+
+        <section id="social-proof">
+            <h2>Trusted By</h2>
+            <div class="partner-logos">
+                <img src="{{ url_for('static', filename='images/partner-logos/partner1.svg') }}" alt="Partner 1">
+                <img src="{{ url_for('static', filename='images/partner-logos/partner2.svg') }}" alt="Partner 2">
+                <img src="{{ url_for('static', filename='images/partner-logos/partner3.svg') }}" alt="Partner 3">
+            </div>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <img src="{{ url_for('static', filename='images/testimonial-avatars/avatar1.jpg') }}" alt="Testimonial 1">
+                    <p>"Shoshin has revolutionized our workflow. It's like having a team of AI experts at your fingertips."</p>
+                    <p class="testimonial-author">- Jane Doe, Tech Innovator</p>
+                </div>
+                <!-- Add more testimonials here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Shoshin Logo">
+            </div>
+            <div class="footer-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2023 Shoshin AI. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
