@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Here you would typically send the email to your server
         // For this example, we'll just show a thank you message
         const thankYouMessage = document.createElement('p');
-        thankYouMessage.textContent = 'Thank you for subscribing!';
+        thankYouMessage.textContent = 'Thank you for subscribing! Stay tuned for more updates.';
         thankYouMessage.classList.add('thank-you-message');
         form.appendChild(thankYouMessage);
         
@@ -43,6 +43,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('section').forEach(section => {
         observer.observe(section);
+    });
+    document.querySelectorAll('.feature-card, .testimonial-card').forEach(card => {
+        card.addEventListener('mouseover', () => {
+            card.style.transform = 'translateY(-10px)';
+        });
+        card.addEventListener('mouseout', () => {
+            card.style.transform = 'translateY(0)';
+        });
     });
 });
 
@@ -66,3 +74,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+ // Simple animations for feature and testimonial cards
+
+
