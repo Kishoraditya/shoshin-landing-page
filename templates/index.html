@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
     <title>Shoshin - Advanced AI Chatbot | Beginners Mind</title>
     <meta name="description" content="Discover Shoshin, the advanced AI chatbot with a beginner's mind. Featuring graph-based RAG, multimodal I/O, and innovative AI agents for specific tasks.">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
@@ -10,7 +11,7 @@
 <body>
     <header>
         <nav>
-            <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Shoshin Logo" class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Shoshin Logo" class="logo">
             <ul>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#pricing">Pricing</a></li>
@@ -40,8 +41,48 @@
             <div class="feature-grid">
                 <div class="feature-card">
                     <img src="{{ url_for('static', filename='images/feature-icons/rag.png') }}" alt="RAG Icon">
-                    <h3>Graph and Vector-based RAG</h3>
-                    <p>Advanced retrieval with multimodal input support.</p>
+                    <h3>Advanced RAG</h3>
+                    <p>Shoshin integrates graph and vector-based Retrieval-Augmented Generation (RAG) for deeper context and richer responses, processing data directly from URLs.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="{{ url_for('static', filename='images/feature-icons/multimodal.png') }}" alt="RAG Icon">
+                    <h3>Multimodal Interaction</h3>
+                    <p>Interact using text, images, videos, csv and many more including Urls and APIs. Get outputs in any format you need, from documents to visual data representations.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="{{ url_for('static', filename='images/feature-icons/data-privacy.png') }}" alt="Less Hallucination Icon">
+                    <h3>Data Privacy Guaranteed</h3>
+                    <p>Your data is safe and stays with you. Shoshin ensures no LLMs store, train, or learn from your data or interactaion sessions.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="{{ url_for('static', filename='images/feature-icons/multi-llm.png') }}" alt="Less Hallucination Icon">
+                    <h3>Multiple LLMs Support</h3>
+                    <p>Integrate and leverage multiple large language models to enhance the quality and diversity of AI interactions as per strengths of individual LLMs</p>
+                </div>
+                <div class="feature-card">
+                    <img src="{{ url_for('static', filename='images/feature-icons/ai-agents.png') }}" alt="Less Hallucination Icon">
+                    <h3>AI Agents</h3>
+                    <p>Access and create custom specialized AI agents for specific tasks. Increase productivity with ready-to-go AI solutions.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="{{ url_for('static', filename='images/feature-icons/aih-dic.png') }}" alt="Less Hallucination Icon">
+                    <h3>AI and human DIC</h3>
+                    <p>Let AI agents discuss, interact and collaborate on topics among themselves and with you. Get refined answers with collaborative intelligence.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="{{ url_for('static', filename='images/feature-icons/cost-meter.png') }}" alt="Less Hallucination Icon">
+                    <h3>Live Cost Meter</h3>
+                    <p>Track the cost of every interaction in real-time, ensuring transparency and control over your AI usage.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="{{ url_for('static', filename='images/feature-icons/expalin-ai-ble.png') }}" alt="Less Hallucination Icon">
+                    <h3>Explain-AI-Ble</h3>
+                    <p>Understand every response with detailed explanations, source citations, and transparency in AI reasoning.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="{{ url_for('static', filename='images/feature-icons/mimichron.png') }}" alt="Less Hallucination Icon">
+                    <h3>Mimichron</h3>
+                    <p>Automate repetitive tasks by mimicking your behavior with all permission and access given by you. Schedule tasks with precision, saving time and effort.</p>
                 </div>
                 <div class="feature-card">
                     <img src="{{ url_for('static', filename='images/feature-icons/hallucination.png') }}" alt="Less Hallucination Icon">
@@ -54,10 +95,10 @@
         </section>
 
         <section id="pricing">
-            <h2>Affordable Pricing</h2>
+            <h2>Transparent & Affordable Pricing</h2>
             <div class="pricing-card">
                 <h3>Early Bird Offer</h3>
-                <p class="price">Under $10/month</p>
+                <p class="price">Get all these advanced features for less than $10/month. Enjoy premium AI without the premium price tag.</p>
                 <ul>
                     <li>Full access to all features</li>
                     <li>Priority support</li>
@@ -69,7 +110,7 @@
 
         <section id="newsletter">
             <h2>Stay Updated</h2>
-            <p>Be the first to know when Shoshin launches. Sign up for our newsletter!</p>
+            <p>Be the first to know when Shoshin launches. Sign up get notified when we launch and receive exclusive early access along with our exclusive newsletter for free!</p>
             <form id="newsletter-form" method="POST">
                 <input type="email" name="email" placeholder="Enter your email" required>
                 <button type="submit" class="cta-button">Notify Me</button>
@@ -80,17 +121,19 @@
         </section>
 
         <section id="social-proof">
-            <h2>Trusted By</h2>
+            <h2>Backed by Leading Innovators</h2>
+            <p>Shoshin is supported by industry leaders and trusted partners who believe in the future of AI.</p>
             <div class="partner-logos">
                 <img src="{{ url_for('static', filename='images/partner-logos/partner1.svg') }}" alt="Partner 1">
                 <img src="{{ url_for('static', filename='images/partner-logos/partner2.svg') }}" alt="Partner 2">
                 <img src="{{ url_for('static', filename='images/partner-logos/partner3.svg') }}" alt="Partner 3">
             </div>
             <div class="testimonials">
+                <h2>What People Are Saying</h2>
                 <div class="testimonial">
                     <img src="{{ url_for('static', filename='images/testimonial-avatars/avatar1.jpg') }}" alt="Testimonial 1">
-                    <p>"Shoshin has revolutionized our workflow. It's like having a team of AI experts at your fingertips."</p>
-                    <p class="testimonial-author">- Jane Doe, Tech Innovator</p>
+                    <p>"Shoshin has revolutionized our workflow and the way we handle complex tasks. It's like having a team of AI experts at your fingertips. The transparency and multimodal capabilities are unmatched"</p>
+                    <p class="testimonial-author">- Jane Doe, Tech Guru</p>
                 </div>
                 <!-- Add more testimonials here -->
             </div>
